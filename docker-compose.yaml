@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  testreact:
+    # image: captainaldi/testreact:v7
+    build:
+      context: .
+      args:
+        - REACT_APP_NAMA="Naruto"
+        - REACT_APP_TINGKAT="Bijuu Mode"
+    container_name: testreact    
+    restart: unless-stopped
+    ports:
+      - "3000:80"

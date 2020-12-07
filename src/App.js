@@ -17,6 +17,10 @@ function App() {
         >
           Learn React
         </a>
+
+        Coba ENV
+        <small>Nama: <b>{env.REACT_APP_NAMA}</b> </small>
+        <small>Mode: <b>{env.REACT_APP_TINGKAT}</b> </small>
       </header>
     </div>
   );
