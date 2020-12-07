@@ -23,5 +23,5 @@ jobs:
             uses: docker/build-push-action@v2
             with:
                 context: .
-                file: ./docker_config/app/staging/Dockerfile
+                file: ./docker_config/Dockerfile
                 tags: captainaldi/testreact:latest
