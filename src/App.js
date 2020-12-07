@@ -19,8 +19,8 @@ function App() {
         </a>
 
         Coba ENV
-        <small>Nama: <b>{env.REACT_APP_NAMA}</b> </small>
-        <small>Mode: <b>{env.REACT_APP_TINGKAT}</b> </small>
+        <small>Nama: <b>{process.env.REACT_APP_NAMA}</b> </small>
+        <small>Mode: <b>{process.env.REACT_APP_TINGKAT}</b> </small>
       </header>
     </div>
   );
