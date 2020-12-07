@@ -1,0 +1,28 @@
+name: TestReact - Push to DockerHub
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build-push-staging:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Docker Tag
+          id: short-sha
+          run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        - name: Login to Dockerhub
+          uses: docker/login-action@v1
+          with:
+            username: ${{ secrets.DOCKERHUB_USER }}
+            password: ${{ secrets.DOCKERHUB_PASS }}
+        -   name: Build and push Docker images API to registry
+            uses: docker/build-push-action@v2
+            with:
+                context: .
+                file: ./docker_config/app/staging/Dockerfile
+                tags: captainaldi/testreact:latest
+                push: true
