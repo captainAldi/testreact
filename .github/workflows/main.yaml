@@ -25,4 +25,3 @@ jobs:
                 context: .
                 file: ./docker_config/app/staging/Dockerfile
                 tags: captainaldi/testreact:latest
-                push: true
